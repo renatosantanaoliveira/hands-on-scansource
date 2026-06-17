@@ -9,7 +9,7 @@ Funcionalidade: Cadastro de novos usuários
   Contexto:
     Dado que acesso a home page da loja
 
-  @features/cadastro.feature @smoke
+  @cadastro @smoke
   Esquema do Cenário: Realizar cadastro com sucesso
     Quando clico em "Login or register"
     E seleciono para registro de um novo cliente
