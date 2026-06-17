@@ -21,7 +21,6 @@ When('preencho os dados obrigatórios do cliente {int}', async function (this: P
   const cliente = (cadastroMassa.clientes as RegistroCliente[]).find((c) => c.clienteId === clienteId);
   if (!cliente) throw new Error(`Cliente com ID ${clienteId} não encontrado no JSON.`);
   
-  // Torna o e-mail único para evitar falhas de "Email já cadastrado" na Pipeline
   const clienteUnico = { ...cliente, email: `test${Date.now()}@automation.com` };
   await this.cadastroPage.fillRegistrationForm(clienteUnico);
 });
