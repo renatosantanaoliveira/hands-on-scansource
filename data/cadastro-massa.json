@@ -1,0 +1,34 @@
+{
+  "clientes": [
+    {
+      "clienteId": 1,
+      "nome": "Maria",
+      "sobrenome": "Silva",
+      "email": "maria.silva@test.com",
+      "password": "Password123!",
+      "cidade": "New York",
+      "estado": "Greater London",
+      "cep": "10001"
+    },
+    {
+      "clienteId": 2,
+      "nome": "Ana",
+      "sobrenome": "Santos",
+      "email": "ana.santos@test.com",
+      "password": "Password123!",
+      "cidade": "Chicago",
+      "estado": "West Midlands",
+      "cep": "60601"
+    },
+    {
+      "clienteId": 3,
+      "nome": "Julia",
+      "sobrenome": "Oliveira",
+      "email": "julia.oliveira@test.com",
+      "password": "Password123!",
+      "cidade": "Houston",
+      "estado": "Hampshire",
+      "cep": "77001"
+    }
+  ]
+}
