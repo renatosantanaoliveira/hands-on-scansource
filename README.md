@@ -1,4 +1,4 @@
-# Hands-on SCANSOURCE — E2E Automation
+# Hands-on SCANSOURCE: E2E Automation
 
 Suite de testes end-to-end para os fluxos de **cadastro de usuários** e **compra de produtos** da [Automation Test Store](https://automationteststore.com), desenvolvida com Playwright + Cucumber + TypeScript.
 
