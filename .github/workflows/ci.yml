@@ -33,10 +33,10 @@ jobs:
       PR_FROM_FORK: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.x
           cache: npm
@@ -54,7 +54,7 @@ jobs:
       # Secret validation removed: this project does not use repository secrets
 
       - name: Restore Allure history
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: .allure-history
           key: allure-history-${{ env.TEST_ENV }}-${{ github.run_id }}-${{ github.run_attempt }}
@@ -102,14 +102,14 @@ jobs:
 
       - name: Save Allure history
         if: always() && steps.preserve-allure-history.outputs.history_found == 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: .allure-history
           key: allure-history-${{ env.TEST_ENV }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload Allure report artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: allure-report-${{ env.TEST_ENV }}
           path: allure-report
@@ -117,7 +117,7 @@ jobs:
 
       - name: Upload Allure results (raw)
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: allure-results-${{ env.TEST_ENV }}
           path: allure-results
@@ -125,7 +125,7 @@ jobs:
 
       - name: Upload GitHub Pages artifact
         if: ${{ !cancelled() && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == github.event.repository.default_branch }}
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: allure-report
 
@@ -143,8 +143,8 @@ jobs:
 
     steps:
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
